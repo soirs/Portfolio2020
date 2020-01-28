@@ -2,12 +2,12 @@
   "env": {
     "browser": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "commonjs": true
   },
   "extends": [
     "airbnb",
     "plugin:prettier/recommended",
-    "plugin:node/recommended",
     "prettier/react",
     "stylelint"
   ],

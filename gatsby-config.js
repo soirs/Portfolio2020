@@ -11,6 +11,12 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-plugin-layout',
+      options: {
+        component: require.resolve('./src/components/layout'),
+      },
+    },
     // {
     //   resolve: `gatsby-source-filesystem`,
     //   options: {
@@ -39,12 +45,6 @@ module.exports = {
         rule: {
           include: path.resolve(__dirname, 'src/assets/svg'),
         },
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-layout',
-      options: {
-        component: require.resolve('./src/components/layout'),
       },
     },
     {
