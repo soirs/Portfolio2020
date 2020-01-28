@@ -1,0 +1,37 @@
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    border-bottom: 10px solid var(--accent);
+  }
+
+  &__list {
+    display: flex;
+  }
+  &__logo {
+    @include rf(26, 32);
+    font-family: $font-logo;
+  }
+  &__item {
+    @include rf(26, 32);
+    // color: var(--text);
+    margin-left: 30px;
+    transition: 200ms opacity ease-in-out;
+    a {
+      cursor: pointer;
+      svg {
+        position: relative;
+        height: 50%;
+        &:active {
+          bottom: 5px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+/* RGB */
+/* Coolors Exported Palette - coolors.co/220901-621708-941b0c-bc3908-f6aa1c */
+$color1: rgba(34, 9, 1, 1);
+$color2: rgba(98, 23, 8, 1);
+$color3: rgba(148, 27, 12, 1);
+$color4: rgba(188, 57, 8, 1);
+$color5: rgba(246, 170, 28, 1);
+
+/* RGB */
+/* Coolors Exported Palette - coolors.co/003049-d62828-f77f00-fcbf49-eae2b7 */
+$color1: hsl(201, 100%, 14%);
+$color2: rgba(214, 40, 40, 1);
+$color3: rgba(247, 127, 0, 1);
+$color4: hsl(40, 97%, 64%);
+$color5: rgba(234, 226, 183, 1);
+
+colortemplate {
+  --bg--light: hsl(0, 0%, 87%);
+  --text--light: hsl(0, 0%, 20%);
+  --link--light: hsl(0, 69%, 50%);
+  --hover--light: --link--light;
+  --accent--light: hsl(146, 100%, 78%);
+
+  --bg--dark: hsl(201, 100%, 14%);
+  --bg--dark: hsl(201, 100%, 90%);
+  --text--dark: rgba(234, 226, 183, 1);
+  --link--dark: rgba(247, 127, 0, 1);
+  --hover--dark: lighten(--link--dark, 10%);
+  --accent--dark: rgba(34, 9, 1, 1);
+
+}
+:root {
+  // Background color
+  @include defineColorHSL(--bg--light, 201, 100%, 90%);
+  @include defineColorHSL(--bg--dark, 201, 100%, 10%);
+
+  // Text color
+  @include defineColorHSL(--text--light, 201, 100%, 10%);
+  @include defineColorHSL(--text--dark, 201, 100%, 90%);
+
+  // Accent color
+  @include defineColorHSL(--accent--light, 201, 100%, 80%);
+  @include defineColorHSL(--accent--dark, 201, 100%, 20%);
+
+  // Link color
+  @include defineColorHSL(--link--light, 201, 100%, 15%);
+  @include defineColorHSL(--link--dark, 201, 100%, 85%);
+
+  @include defineColorHSL(--hover--light, 201, 100%, 5%);
+  @include defineColorHSL(--hover--dark, 201, 100%, 95%);
+
+
+
+
+
+
+  --bg--light2: lighten(rgba(0, 48, 73, 1), 50%);
+  --text--light2: var(darken(rgb(173, 173, 173), 11%));
+  --link--light2: rgba(214, 40, 40, 1);
+  --hover--light2: lighten(--link--light, 10%);
+  --accent--light2: hsl(146, 100%, 78%);
+
+  --bg--dark2: rgba(0, 48, 73, 1);
+  --text--dark2: rgba(234, 226, 183, 1);
+  --link--dark2: rgba(247, 127, 0, 1);
+  --hover--dark2: lighten(--link--dark, 10%);
+  --accent--dark2: rgba(34, 9, 1, 1);
+}
+:root,
+[data-theme='default'] {
+  --bg: var(--bg--light);
+  --text: var(--text--light);
+  --link: var(--link--light);
+  --hover: var(--hover--light);
+  --accent: var(--accent--light);
+}
+
+:root,
+[data-theme='dark'] {
+  --bg: var(--bg--dark);
+  --text: var(--text--dark);
+  --link: var(--link--dark);
+  --hover: var(--hover--dark);
+  --accent: var(--accent--dark);
+}
+[data-theme] {
+  background-color: var(--bg);
+  color: var(--text);
+}

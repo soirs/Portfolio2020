@@ -1,0 +1,18 @@
+{
+  "plugins": [
+    "stylelint-prettier",
+    "stylelint-scss"
+  ],
+  "extends": ["stylelint-prettier/recommended"],
+  "rules": {
+    "prettier/prettier": true,
+    "scss/dollar-variable-pattern": "^foo",
+    "scss/selector-no-redundant-nesting-selector": true,
+  },
+  "ignoreFiles": [
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
+}

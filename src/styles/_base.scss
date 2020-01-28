@@ -1,0 +1,27 @@
+/* stylelint-disable selector-max-type  */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+@viewport {
+  width: device-width;
+}
+
+:root {
+  @if global-variable-exists(scale) {
+    --scale-element: 1;
+    --scale-font: 1;
+
+    @each $size in $scale {
+      @media (max-height: nth($size, 1)) {
+        --scale-element: #{nth($size, 2)};
+        --scale-font: #{nth($size, 2)};
+      }
+    }
+  }
+}
+

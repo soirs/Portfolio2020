@@ -1,42 +1,24 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+// import { PropTypes } from 'prop-types';
+import React from 'react';
+import ProfileImage from '../assets/images/FrankSemakula2020.png';
+import Link from './LinkInternal';
+import Logo from './Logo';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
+const Header = ({ children }) => (
+  <header className="header">
+    <div className="header__container">
+      <div className="header__content">
+        <img className="profile-image" src={ProfileImage} alt="" />
+        <Link to="/" className="header__logo">
+          <Logo text="frank.semakula" />
         </Link>
-      </h1>
+        <div className="header__navigation">{children}</div>
+      </div>
     </div>
   </header>
-)
+);
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+// Header.propTypes = {
+//   children: PropTypes.isRequired,
+// };
+export default Header;

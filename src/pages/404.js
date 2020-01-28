@@ -1,14 +1,15 @@
-import React from "react"
+import React from 'react';
+import Helmet from 'react-helmet';
+import Segment from '../components/Segment';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+// tslint:disable no-default-export
+const ErrorPage = () => (
+  <>
+    <Helmet title="404 Not Found" />
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
-)
-
-export default NotFoundPage
+    <Segment>
+      <h1>Page was not found</h1>
+    </Segment>
+  </>
+);
+export default ErrorPage;

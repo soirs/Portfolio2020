@@ -1,0 +1,77 @@
+.header {
+  display: block;
+
+  &__container {
+    @include container;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+
+    padding: $gutter 0;
+    @media (max-width: $max-768) {
+      display: block;
+      text-align: center;
+    }
+  }
+  &__logo {
+    width: auto;
+    position: relative;
+  }
+  &__navigation {
+    font-family: $font-logo;
+    color: var(--text);
+    @include rf(26, 36);
+
+    display: flex;
+    margin-left: auto;
+    .link {
+      transform: rotate(-3deg);
+
+      // Possibly delete all but bottom border
+      border-top: 5px solid var(--bg);
+      border-right: 10px solid var(--bg);
+      border-bottom: 5px solid var(--text);
+      border-left: 10px solid var(--bg);
+      border-width: 1px 2px 1px 2px;
+      border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
+    }
+    @media (max-width: $max-768) {
+      @include rf(20, 28);
+      margin-top: 20px;
+      justify-content: center;
+    }
+  }
+}
+
+[data-text='frank.semakula'].logo__style {
+  @include rf(26, 36);
+  letter-spacing: 3px;
+  font-family: $font-logo;
+  transform: rotate(-3deg);
+  border-top: 5px solid var(--bg);
+  border-right: 10px solid var(--bg);
+  border-bottom: 5px solid var(--text);
+  border-left: 10px solid var(--bg);
+  border-width: 3px 4px 3px 5px;
+  border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
+  // transform: rotate(2deg);
+  @media (max-width: $max-768) {
+    width: 100%;
+    @include rf(30, 36);
+  }
+}
+
+.profile-image {
+  width: 10%;
+  margin: 0 auto;
+  border-radius: 50%;
+  z-index: 4;
+  position: relative;
+  background: var(--link);
+  border: 2px dashed var(--link);
+  @media (max-width: $max-768) {
+    width: 25%;
+  }
+}

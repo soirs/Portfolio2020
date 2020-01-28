@@ -1,0 +1,87 @@
+// @import '~modern-normalize/modern-normalize.css';
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+@import 'colors';
+@import 'grid';
+@import 'base';
+@import 'animations';
+
+// components
+@import 'components/layout';
+@import 'components/header';
+@import 'components/intro';
+@import 'components/footer';
+@import 'components/block-text';
+@import 'components/button';
+@import 'components/container';
+@import 'components/highlight';
+@import 'components/link';
+@import 'components/row';
+@import 'components/segment';
+@import 'components/portfolio';
+
+html,
+body {
+  min-height: 100vh;
+
+  background: var(--bg);
+}
+
+html {
+  // -webkit-overflow-scrolling: touch;
+  // overflow-x: hidden;
+  // overflow-y: scroll; // always show the vertical scrollbar so that content doesn't jump
+background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  box-sizing: border-box;
+}
+
+// inherited from <html>
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  @include responsive-font($font-size-min, $font-size);
+
+  position: relative;
+  font-family: $font-europa;
+  line-height: $line-height;
+  text-size-adjust: 100%; // iOS on orientation change
+
+  color: var(--text);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// placeholders
+input,
+textarea,
+select {
+  &::-webkit-input-placeholder {
+    color: --accent;
+  }
+
+  &::-moz-placeholder {
+    opacity: 1;
+    color: --accent;
+  }
+
+  &:-ms-input-placeholder {
+    color: --accent;
+  }
+}
