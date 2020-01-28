@@ -18,30 +18,34 @@ import Logo from './Logo';
 // https://github.com/greglobinski/gatsby-starter-hero-blog/blob/master/src/layouts/index.js
 class Layout extends React.Component {
   // Define a state object to hold our app's state
-  state = {
-    // Boolean attribute that will allow us to toggle the switch
-    // Keep the switch on if the theme is dark
-    checked: null,
-    /**
-     * When a user activates the dark theme we will store the value
-     * on localstorage or set default value to light if it is neither dark
-     * nor light
-     */
-    theme: null,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      // Boolean attribute that will allow us to toggle the switch
+      // Keep the switch on if the theme is dark
+      checked: null,
+      /**
+       * When a user activates the dark theme we will store the value
+       * on localstorage or set default value to light if it is neither dark
+       * nor light
+       */
+      theme: null,
+    };
+  }
 
   componentDidMount() {
     this.setState({
-      checked: localStorage.getItem('theme') === 'dark' ? true : false,
+      checked: localStorage.getItem('theme') === 'dark',
     });
     this.setState({ theme: localStorage.getItem('theme') });
     // Update the data-theme attribute of our html tag
     const themeSwitch = document.getElementById('themeSwitch');
 
     const loaded = localStorage.getItem('theme');
+
     document.body.setAttribute(
       'data-theme',
-      loaded ? localStorage.getItem('theme') : 'dark'
+      loaded ? localStorage.getItem('theme') : 'dark',
     );
     this.initTheme();
   }
@@ -50,6 +54,7 @@ class Layout extends React.Component {
     const darkThemeSelected =
       localStorage.getItem('theme') !== null &&
       localStorage.getItem('theme') === 'dark';
+
     // update checkbox
     themeSwitch.checked = darkThemeSelected;
     // update body data-theme attribute
@@ -57,9 +62,11 @@ class Layout extends React.Component {
       ? document.body.setAttribute('data-theme', 'dark')
       : document.body.removeAttribute('data-theme');
   };
+
   // Class method allowing us to toggle the theme change
   toggleThemeChange = () => {
     const { checked } = this.state;
+
     // If theme is light then change to dark
     if (checked === false) {
       // Update localstorage
@@ -93,6 +100,7 @@ class Layout extends React.Component {
       });
     }
   };
+
   render() {
     const { children } = this.props;
     const { checked } = this.state;
@@ -107,6 +115,7 @@ class Layout extends React.Component {
     //   window.matchMedia('(prefers-color-scheme: dark)').matches;
     const isDark = () => {
       const isDarkTheme = !checked ? '💤' : '🔆';
+
       return <span className="spinning">{isDarkTheme}</span>;
     };
 
@@ -121,7 +130,7 @@ class Layout extends React.Component {
             type="checkbox"
             id="themeSwitch"
             // checked={this.state.checked}
-            defaultChecked={this.state.checked}
+            defaultChecked={checked}
             onChange={() => this.toggleThemeChange()}
           />
         </Header>
