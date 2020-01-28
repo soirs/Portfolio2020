@@ -14,7 +14,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-layout',
       options: {
-        component: require.resolve(`${__dirname}/src/components/Layout`), // casing error..
+        component: require.resolve(`${__dirname}/src/components/layout`), // casing error..
       },
     },
     {
