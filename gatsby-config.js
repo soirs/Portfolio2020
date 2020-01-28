@@ -14,7 +14,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-layout',
       options: {
-        component: require.resolve('./src/components/Layout'),
+        component: require.resolve('./src/components/Layout'), // casing error..
       },
     },
     {
@@ -22,7 +22,6 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/assets/`,
-        // path: `src/assets/`,
       },
     },
     {
