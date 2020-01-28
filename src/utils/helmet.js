@@ -39,4 +39,5 @@ const helmet = {
     { rel: 'stylesheet', href: typekit },
   ],
 };
+
 export default helmet;

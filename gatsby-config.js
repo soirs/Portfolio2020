@@ -11,14 +11,14 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        // path: `${__dirname}/src/images`,
-        path: `src/assets/`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `images`,
+    //     // path: `${__dirname}/src/images`,
+    //     path: `src/assets/`,
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
