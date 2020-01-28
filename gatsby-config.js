@@ -17,14 +17,14 @@ module.exports = {
         component: require.resolve('./src/components/layout'),
       },
     },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `images`,
-    //     // path: `${__dirname}/src/images`,
-    //     path: `src/assets/`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/assets/`,
+        // path: `src/assets/`,
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
