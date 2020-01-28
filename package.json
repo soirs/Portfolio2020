@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "build": "gatsby build",
-    "clean": "gatsby clean && echo 'Add node_modules to script?' && rimraf .cache public && yarn upgrade",
+    "clean": "gatsby clean && echo '☝️ ☝️ Add node_modules to script?' && rimraf .cache public && yarn upgrade",
     "dev": "gatsby develop",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",

@@ -21,16 +21,20 @@ class Layout extends React.Component {
   state = {
     // Boolean attribute that will allow us to toggle the switch
     // Keep the switch on if the theme is dark
-    checked: localStorage.getItem('theme') === 'dark' ? true : false,
+    checked: null,
     /**
      * When a user activates the dark theme we will store the value
      * on localstorage or set default value to light if it is neither dark
      * nor light
      */
-    theme: localStorage.getItem('theme'),
+    theme: null,
   };
 
   componentDidMount() {
+    this.setState({
+      checked: localStorage.getItem('theme') === 'dark' ? true : false,
+    });
+    this.setState({ theme: localStorage.getItem('theme') });
     // Update the data-theme attribute of our html tag
     const themeSwitch = document.getElementById('themeSwitch');
 
@@ -108,12 +112,7 @@ class Layout extends React.Component {
 
     return (
       <div className="layout">
-        <Helmet {...helmet}>
-          <script
-            src="https://kit.fontawesome.com/90e0768a92.js"
-            crossOrigin="anonymous"
-          />
-        </Helmet>
+        <Helmet {...helmet} />
 
         <Header>
           <HeaderLink name="about" to="/about" />
